@@ -8,8 +8,8 @@ const VueSSRClientPlugin = require('vue-server-renderer/client-plugin');
 const nodeExternals = require('webpack-node-externals');
 
 const faviconPlugin = require('./src/js/favicon-plugin');
-module.exports = (env) => {
-	let outPath;
+module.exports = () => {
+	let env = process.env, outPath;
 	if (env && env.path) {
 		outPath = path.resolve(env.path, 'static');
 	} else {
